@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # tonkit — TON kinetics with off-cycle reservoirs
 
 Small Python package that turns a catalytic network (cycle + reservoirs + dead ends) into the three TON definitions (TON_inf, TON(T), t_half), the exact single-molecule law of the turnover count N, and stochastic (Gillespie) runs. Every closed form from T1–T4 is reproduced through this general engine by the test suite.
