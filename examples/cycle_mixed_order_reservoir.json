@@ -1,0 +1,109 @@
+{
+ "name": "cycle_mixed_order_reservoir",
+ "T": 298.15,
+ "energy_unit": "kcal/mol",
+ "standard_state": 1.0,
+ "species": [
+  {
+   "name": "A",
+   "conc0": 9.082652134423251e-07,
+   "catalyst": true
+  },
+  {
+   "name": "B",
+   "conc0": 9.082652134423252e-05,
+   "catalyst": true
+  },
+  {
+   "name": "S",
+   "conc0": 1.0,
+   "fixed": true
+  },
+  {
+   "name": "P"
+  },
+  {
+   "name": "D",
+   "dead": true
+  },
+  {
+   "name": "R",
+   "conc0": 0.0009082652134423251,
+   "catalyst": true
+  },
+  {
+   "name": "D2",
+   "dead": true,
+   "metal": 2
+  }
+ ],
+ "reactions": [
+  {
+   "id": "r1",
+   "reactants": {
+    "A": 1,
+    "S": 1
+   },
+   "products": {
+    "B": 1
+   },
+   "k": 100.0
+  },
+  {
+   "id": "r2",
+   "reactants": {
+    "B": 1
+   },
+   "products": {
+    "A": 1,
+    "P": 1
+   },
+   "k": 1.0
+  },
+  {
+   "id": "res",
+   "reactants": {
+    "B": 1
+   },
+   "products": {
+    "R": 1
+   },
+   "k": 10000.0
+  },
+  {
+   "id": "res_rev",
+   "reactants": {
+    "R": 1
+   },
+   "products": {
+    "B": 1
+   },
+   "k": 1000.0
+  },
+  {
+   "id": "d1",
+   "reactants": {
+    "B": 1
+   },
+   "products": {
+    "D": 1
+   },
+   "k": 1e-05
+  },
+  {
+   "id": "d2",
+   "reactants": {
+    "B": 2
+   },
+   "products": {
+    "D2": 1
+   },
+   "k": 1.01,
+   "convention": "consumption"
+  }
+ ],
+ "objective": {
+  "type": "species",
+  "name": "P"
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "name": "t1_network_res",
+ "T": 298.15,
+ "energy_unit": "kcal/mol",
+ "standard_state": 1.0,
+ "species": [
+  {
+   "name": "A",
+   "conc0": 1.0,
+   "catalyst": true
+  },
+  {
+   "name": "B",
+   "catalyst": true
+  },
+  {
+   "name": "C",
+   "catalyst": true
+  },
+  {
+   "name": "S",
+   "conc0": 1.0,
+   "fixed": true
+  },
+  {
+   "name": "P"
+  },
+  {
+   "name": "D1",
+   "dead": true
+  },
+  {
+   "name": "D2",
+   "dead": true
+  },
+  {
+   "name": "R1",
+   "catalyst": true
+  },
+  {
+   "name": "R2",
+   "catalyst": true
+  },
+  {
+   "name": "R3",
+   "catalyst": true
+  }
+ ],
+ "reactions": [
+  {
+   "id": "r1",
+   "reactants": {
+    "A": 1,
+    "S": 1
+   },
+   "products": {
+    "B": 1
+   },
+   "k": 5.0
+  },
+  {
+   "id": "r1_rev",
+   "reactants": {
+    "B": 1
+   },
+   "products": {
+    "A": 1,
+    "S": 1
+   },
+   "k": 1.0
+  },
+  {
+   "id": "r2",
+   "reactants": {
+    "B": 1
+   },
+   "products": {
+    "C": 1
+   },
+   "k": 4.0
+  },
+  {
+   "id": "r3",
+   "reactants": {
+    "C": 1
+   },
+   "products": {
+    "A": 1,
+    "P": 1
+   },
+   "k": 1.0
+  },
+  {
+   "id": "dA",
+   "reactants": {
+    "A": 1
+   },
+   "products": {
+    "D1": 1
+   },
+   "k": 0.1
+  },
+  {
+   "id": "dC",
+   "reactants": {
+    "C": 1
+   },
+   "products": {
+    "D2": 1
+   },
+   "k": 0.02
+  },
+  {
+   "id": "res1",
+   "reactants": {
+    "C": 1
+   },
+   "products": {
+    "R1": 1
+   },
+   "k": 3.0
+  },
+  {
+   "id": "res1_rev",
+   "reactants": {
+    "R1": 1
+   },
+   "products": {
+    "C": 1
+   },
+   "k": 0.5
+  },
+  {
+   "id": "res2",
+   "reactants": {
+    "B": 1
+   },
+   "products": {
+    "R2": 1
+   },
+   "k": 2.0
+  },
+  {
+   "id": "res2_rev",
+   "reactants": {
+    "R2": 1
+   },
+   "products": {
+    "B": 1
+   },
+   "k": 1.0
+  },
+  {
+   "id": "res3",
+   "reactants": {
+    "R2": 1
+   },
+   "products": {
+    "R3": 1
+   },
+   "k": 0.5
+  },
+  {
+   "id": "res3_rev",
+   "reactants": {
+    "R3": 1
+   },
+   "products": {
+    "R2": 1
+   },
+   "k": 0.25
+  }
+ ],
+ "objective": {
+  "type": "species",
+  "name": "P"
+ }
+}
